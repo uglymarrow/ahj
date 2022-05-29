@@ -1,6 +1,5 @@
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-
 const { merge } = require('webpack-merge');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -9,7 +8,7 @@ module.exports = merge(common, {
     minimize: true,
     minimizer: [
       new OptimizeCSSAssetsPlugin({}),
-      '...', // defaults из Webpack
+      '...',
     ],
   },
 });

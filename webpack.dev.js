@@ -6,20 +6,16 @@ const common = require('./webpack.common');
 module.exports = merge(common, {
   // Set the mode to development or production
   mode: 'development',
-
-  //   Control how source maps are generated
+  // Control how source maps are generated
   devtool: 'inline-source-map',
 
-  //   Spin up a server for quick development
+  // Spin up a server for quick development
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
     historyApiFallback: true,
-    // contentBase: path.resolve(__dirname, '/dist'),
+    contentBase: path.resolve(__dirname, '/dist'),
     open: true,
     compress: true,
-    port: 3010,
+    port: 4000,
   },
 
   plugins: [
